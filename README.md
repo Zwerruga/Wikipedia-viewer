@@ -1,6 +1,6 @@
 # Welcome Wikipedia viewer!
 
-Simple application. Using the wikipedia api for a quick overview of articles with a nice design. [Online demo link]('https://wikipedia-viewer-react.web.app/').
+Simple application. Using the wikipedia api for a quick overview of articles with a nice design. ![Online demo link]('https://wikipedia-viewer-react.web.app/').
 
 ## General Info
  - React
