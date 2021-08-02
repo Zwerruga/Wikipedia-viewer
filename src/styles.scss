@@ -1,0 +1,138 @@
+$blue: #092B40;
+$orange: #D96F32;
+$article: #E7E7E8;
+$magnifier-diametr: 20px;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin scrollbars($size, $foreground-color) {
+	&::-webkit-scrollbar {
+		width: $size;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+	}
+	& {
+		scrollbar-face-color: $foreground-color;
+	}
+}
+
+body {
+	background: $blue;
+	@include scrollbars(15px, $orange);
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container-column {
+	flex-direction: column;
+}
+.main-container {
+	min-height: 100vh;
+	min-width: 100vw;
+}
+.none-decorated-link {
+	text-decoration: none;
+	color: #fff;
+}
+.underline-hover {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.article-search {
+	margin-top: 40px;
+	& p {
+		color: #fff;
+		margin-top: 20px;
+		display: none;
+	}
+	& .random-article {
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	&:only-child {
+		margin: auto;
+		& p {
+			display: block;
+		}
+		& .magnifier:hover + p {
+			@extend .underline-hover:hover;
+		}
+	}
+}
+.magnifier {
+	background: transparent;
+	width: $magnifier-diametr;
+	height: $magnifier-diametr;
+	padding: 5px;
+	border-radius: 30px;
+	border: 5px solid $orange;
+	outline: none;
+	color: $blue;
+	overflow: hidden;
+	transition: width 0.3s ease-out;
+	& .search {
+		display: block;
+		background: transparent;
+		outline: none;
+		padding-left: 5px;
+		height: 30px;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+	}
+	& .eks {
+		width: 40px;
+		height: 40px;
+		color: $orange;
+		cursor: pointer;
+	}
+	& .magnifier_pen {
+		content: '';
+		position: absolute;
+		background: $orange;
+		margin-left: 18px;
+		margin-top: 23px;
+		width: 3px;
+		height: 20px;
+		transform: rotate(320deg);
+		transition: height 0.2s ease-out;
+	}
+}
+
+.wrapper {
+	margin: 5px 0;
+	padding: 0 5px;
+	&:first-of-type {
+		margin-top: 40px;
+	}
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+	&:hover {
+		background: $orange;
+	}
+}
+
+.article {
+	width: 88vw;
+	box-sizing: border-box;
+	background: $article;
+	cursor: pointer;
+	color: #000;
+	padding: 5px 10px;
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+}
