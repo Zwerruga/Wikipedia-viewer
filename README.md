@@ -12,5 +12,5 @@ Simple application. Using the wikipedia api for a quick overview of articles wit
 
 
 ## In Future
- Make state easier using react hook useEffect.
- - Add a page preview to a modal window in a frame.
+ Make state easier using react hook useEffect
+ - Add a page preview to a modal window in a frame
